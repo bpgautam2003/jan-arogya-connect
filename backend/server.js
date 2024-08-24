@@ -12,6 +12,7 @@ const port = process.env.PORT;
 const cors = require('cors');
 const queue = require('./models/queue-model.js')
 const queuerouter = require('./routes/queue-routes.js')
+const bedrouter = require('./routes/bed-routes.js');
 
 //middleware
 app.use(express.json());
@@ -32,6 +33,7 @@ app.use('/api/auth', authrouter);
 app.use('/api/doctor', doctorrouter);
 app.use('/api/patient', patientrouter);
 app.use('/api/queue', queuerouter);
+app.use('/api/bed', bedrouter);
 
 //Connecting database
 connectDb().then(() => {

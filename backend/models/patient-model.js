@@ -11,21 +11,28 @@ const patientSchema = new mongoose.Schema({
     },
     age: {
         type: Number,
-        require: true
+        require: false
     },
     contact: {
         type: Number,
-        require: true
+        require: false
     },
     weight : {
-        type : Number
+        type : Number,
+        require: false
     },
     height: {
-        type: Number
+        type: Number,
+        require: false
     },
     doc_assigned : {
         type : String,
-        default : "General"
+        require: false
+    },
+    speciality : {
+        type : String,
+        default : "General",
+        require: false
     }
 })
 
