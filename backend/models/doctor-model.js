@@ -5,11 +5,7 @@ const doctorSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    hrn: {
-        type: String,
-        require: true
-    },
-    address: {
+    reg_no: {
         type: String,
         require: true
     },
@@ -17,14 +13,65 @@ const doctorSchema = new mongoose.Schema({
         type : Number,
         require: true
     },
-    email: {
-        type: String,
+    year_of_reg: {
+        type: Number,
         require: true
     },
-    password: {
+    speciality: {
         type : String,
         require : true
+    },
+    qualification: {
+        type : String,
+        require : true
+    },
+    education: {
+        type : String,
+        require : true
+    },
+    gender: {
+        type : String,
+        require : true
+    },
+    dob: {
+        type : String,
+        require : true
+    },
+    salary: {
+        type : String,
+        require : true
+    },
+    availability : {
+        Monday : {
+            type : [String],
+            default : []
+        },
+        Tuesday : {
+            type : [String],
+            default : []
+        },
+        Wednesday : {
+            type : [String],
+            default : []
+        },
+        Thursday : {
+            type : [String],
+            default : []
+        },
+        Friday : {
+            type : [String],
+            default : []
+        },
+        Saturday : {
+            type : [String],
+            default : []
+        },
+        Sunday : {
+            type : [String],
+            default : []
+        }
     }
+
 })
 
 

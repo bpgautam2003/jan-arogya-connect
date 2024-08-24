@@ -13,4 +13,5 @@ router.post("/reception-login", authControllers.receptionLogin)
 router.post("/reception-register", authControllers.receptionRegister)
 
 
+
 module.exports = router;
