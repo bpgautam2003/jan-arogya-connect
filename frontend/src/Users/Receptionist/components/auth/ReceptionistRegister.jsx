@@ -8,7 +8,7 @@
 //       <form>
 //         {/* Employee ID Field */}
 //         <div className="mb-4">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="employeeId">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="employeeId">
 //             Employee ID
 //           </label>
 //           <input
@@ -22,7 +22,7 @@
 
 //         {/* Name Field */}
 //         <div className="mb-4">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="name">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="name">
 //             Name
 //           </label>
 //           <input
@@ -36,7 +36,7 @@
 
 //         {/* Password Field */}
 //         <div className="mb-6">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="password">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="password">
 //             Password
 //           </label>
 //           <input
@@ -69,6 +69,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import HomeNavbar from '../../../Admin/components/Navbar/HomeNavbar';
 
 const RECEPTIONIST_REGISTER_API_END_POINT = "http://localhost:5000/api/auth/reception-register";
 
@@ -106,13 +107,15 @@ const ReceptionistRegister = () => {
   };
 
   return (
+    <>
+    <HomeNavbar/>
     <div className="min-h-screen flex items-center justify-center bg-green-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-2xl font-bold text-green-800 mb-6 text-center">Receptionist Register</h2>
         <form onSubmit={handleSubmit}>
           {/* Employee ID Field */}
           <div className="mb-4">
-            <label className="block text-green-700 font-semibold mb-2" htmlFor="employee_id">
+            <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="employee_id">
               Employee ID
             </label>
             <input
@@ -129,7 +132,7 @@ const ReceptionistRegister = () => {
 
           {/* Name Field */}
           <div className="mb-4">
-            <label className="block text-green-700 font-semibold mb-2" htmlFor="name">
+            <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="name">
               Name
             </label>
             <input
@@ -146,7 +149,7 @@ const ReceptionistRegister = () => {
 
           {/* Password Field */}
           <div className="mb-6">
-            <label className="block text-green-700 font-semibold mb-2" htmlFor="password">
+            <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="password">
               Password
             </label>
             <input
@@ -178,6 +181,7 @@ const ReceptionistRegister = () => {
       
         </div>
     </div>
+    </>
   );
 };
 

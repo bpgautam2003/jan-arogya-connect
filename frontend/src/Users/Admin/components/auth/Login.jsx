@@ -8,7 +8,7 @@
 //       <form>
 //         {/* Employee ID Field */}
 //         <div className="mb-4">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="email">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="email">
 //             Email ID
 //           </label>
 //           <input
@@ -22,7 +22,7 @@
 
 //         {/* Password Field */}
 //         <div className="mb-6">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="password">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="password">
 //             Password
 //           </label>
 //           <input
@@ -98,7 +98,7 @@ const Login = () => {
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
-                className="block text-green-700 font-semibold mb-2"
+                className="block text-green-700 font-semibold mb-2 text-left"
                 htmlFor="email"
               >
                 Email ID
@@ -116,7 +116,7 @@ const Login = () => {
 
             <div className="mb-6">
               <label
-                className="block text-green-700 font-semibold mb-2"
+                className="block text-green-700 font-semibold mb-2 text-left"
                 htmlFor="password"
               >
                 Password

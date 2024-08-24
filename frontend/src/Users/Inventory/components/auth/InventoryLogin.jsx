@@ -1,14 +1,17 @@
 import React from 'react'
+import HomeNavbar from '../../../Admin/components/Navbar/HomeNavbar'
 
 const InventoryLogin = () => {
   return (
+    <>
+    <HomeNavbar/>
     <div className="min-h-screen flex items-center justify-center bg-green-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-2xl font-bold text-green-800 mb-6 text-center">Inventory Login</h2>
         <form>
           {/* Employee ID Field */}
           <div className="mb-4">
-            <label className="block text-green-700 font-semibold mb-2" htmlFor="employeeId">
+            <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="employeeId">
               Employee ID
             </label>
             <input
@@ -22,7 +25,7 @@ const InventoryLogin = () => {
 
           {/* Name Field */}
           <div className="mb-4">
-            <label className="block text-green-700 font-semibold mb-2" htmlFor="name">
+            <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="name">
               Name
             </label>
             <input
@@ -36,7 +39,7 @@ const InventoryLogin = () => {
 
           {/* Password Field */}
           <div className="mb-6">
-            <label className="block text-green-700 font-semibold mb-2" htmlFor="password">
+            <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="password">
               Password
             </label>
             <input
@@ -60,6 +63,7 @@ const InventoryLogin = () => {
         </form>
       </div>
     </div>
+    </>
   )
 }
 

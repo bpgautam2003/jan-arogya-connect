@@ -9,7 +9,7 @@
 //       <form>
 //          {/* Employee ID Field */}
 //          <div className="mb-4">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="name">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="name">
 //             Name
 //           </label>
 //           <input
@@ -22,7 +22,7 @@
 //         </div>
 //         {/* HRN Field */}
 //         <div className="mb-4">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="hrn">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="hrn">
 //             HRN Number
 //           </label>
 //           <input
@@ -36,7 +36,7 @@
 
 //         {/* address */}
 //         <div className="mb-6">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="address">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="address">
 //             Address
 //           </label>
 //           <input
@@ -50,7 +50,7 @@
 
 //         {/* Contact Field */}
 //         <div className="mb-6">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="contact">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="contact">
 //             Contact
 //           </label>
 //           <input
@@ -64,7 +64,7 @@
 
 //         {/* email Field */}
 //         <div className="mb-6">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="email">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="email">
 //             Email
 //           </label>
 //           <input
@@ -78,7 +78,7 @@
 
 //         {/* Password Field */}
 //         <div className="mb-6">
-//           <label className="block text-green-700 font-semibold mb-2" htmlFor="password">
+//           <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="password">
 //             Password
 //           </label>
 //           <input
@@ -153,7 +153,7 @@ const Signup = () => {
           {error && <div className="text-red-500 text-center mb-4">{error}</div>}
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block text-green-700 font-semibold mb-2" htmlFor="name">
+              <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="name">
                 Name
               </label>
               <input
@@ -167,7 +167,7 @@ const Signup = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-green-700 font-semibold mb-2" htmlFor="hrn">
+              <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="hrn">
                 HRN Number
               </label>
               <input
@@ -181,7 +181,7 @@ const Signup = () => {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-green-700 font-semibold mb-2" htmlFor="address">
+              <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="address">
                 Address
               </label>
               <input
@@ -195,7 +195,7 @@ const Signup = () => {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-green-700 font-semibold mb-2" htmlFor="contact">
+              <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="contact">
                 Contact
               </label>
               <input
@@ -209,7 +209,7 @@ const Signup = () => {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-green-700 font-semibold mb-2" htmlFor="email">
+              <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="email">
                 Email
               </label>
               <input
@@ -223,7 +223,7 @@ const Signup = () => {
               />
             </div>
             <div className="mb-6">
-              <label className="block text-green-700 font-semibold mb-2" htmlFor="password">
+              <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="password">
                 Password
               </label>
               <input
