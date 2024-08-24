@@ -16,6 +16,7 @@ import ReceptionistRegister from "./Users/Receptionist/components/auth/Reception
 import ERPatients from "./Users/Queue/ERPatients";
 import OccupiedDoctors from "./Users/Queue/OccupiedDoctors";
 import Newdashboard from "./Users/Doctors/components/DoctorLandingPage.jsx";
+import InventoryHome from "./Users/Inventory/components/InventoryHome";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="Users/Admin/components/auth/Signup" element={<Signup/>}/>
           <Route path="Users/Inventory/components/auth/InventoryLogin" element={<InventoryLogin/>}/>
           <Route path="Users/Receptionist/components/auth/ReceptionistLogin" element={<ReceptionistLogin/>}/>
+          <Route path="/inventory-home" element={<InventoryHome/>}/>
           <Route path="Users/Inventory/components/auth/InventoryRegister" element={<InventoryRegister/>}/>
           <Route path="Users/Receptionist/components/auth/ReceptionistRegister" element={<ReceptionistRegister/>}/>
           <Route path="/receptionist-dashboard" element={<ReceptionistDashboard/>}/>
