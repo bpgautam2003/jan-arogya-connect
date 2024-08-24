@@ -10,14 +10,11 @@ import DoctorProfile from "./Users/Doctors/components/DoctorProfile.js"
 import ReceptionistDashboard from "./Users/Receptionist/components/ReceptionistDashboard";
 import ManageQueues from "./Users/Queue/ManageQueues";
 import PatientAssignment from "./Users/Queue/PatientAssignment";
-<<<<<<< Updated upstream
 import MainLandingPage from "./MainLandingPage";
 import InventoryRegister from "./Users/Inventory/components/auth/InventoryRegister";
 import ReceptionistRegister from "./Users/Receptionist/components/auth/ReceptionistRegister";
-=======
 import ERPatients from "./Users/Queue/ERPatients";
 import OccupiedDoctors from "./Users/Queue/OccupiedDoctors";
->>>>>>> Stashed changes
 import Newdashboard from "./Users/Doctors/components/DoctorLandingPage.jsx";
 
 function App() {
