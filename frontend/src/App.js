@@ -6,6 +6,8 @@ import Signup from "./Users/Admin/components/auth/Signup";
 import HomeNavbar from "./Users/Admin/components/Navbar/HomeNavbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InventoryLogin from "./Users/Inventory/components/auth/InventoryLogin";
+import ManageQueues from "./Users/Queue/ManageQueues";
+import PatientAssignment from "./Users/Queue/PatientAssignment";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <ReceptionistLogin />
         <Login />
         <Signup /> */}
+        <PatientAssignment/>
+        <ManageQueues/>
       </div>
     </Router>
   );
