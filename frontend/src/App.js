@@ -6,6 +6,8 @@ import Signup from "./Users/Admin/components/auth/Signup";
 import HomeNavbar from "./Users/Admin/components/Navbar/HomeNavbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InventoryLogin from "./Users/Inventory/components/auth/InventoryLogin";
+import DoctorProfile from "./Users/Doctors/components/DoctorProfile.js"
+import ReceptionistDashboard from "./Users/Receptionist/components/ReceptionistDashboard";
 import ManageQueues from "./Users/Queue/ManageQueues";
 import PatientAssignment from "./Users/Queue/PatientAssignment";
 import MainLandingPage from "./MainLandingPage";
@@ -26,6 +28,8 @@ function App() {
           <Route path="Users/Receptionist/components/auth/ReceptionistLogin" element={<ReceptionistLogin/>}/>
           <Route path="Users/Inventory/components/auth/InventoryRegister" element={<InventoryRegister/>}/>
           <Route path="Users/Receptionist/components/auth/ReceptionistRegister" element={<ReceptionistRegister/>}/>
+          <Route path="/receptionist-dashboard" element={<ReceptionistDashboard/>}/>
+          <Route path="/doctor-profile/:reg_no" element={<DoctorProfile/>} />
         </Routes>
         {/* <Admin />
         <ReceptionistLogin />
