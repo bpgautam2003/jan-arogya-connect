@@ -27,7 +27,7 @@ const getDoctor = async (req, res) => {
 
 const addDoctor = async(req, res) => {
     try {
-        const {reg_no, contact, year_of_reg, speciality, qualification, education, gender, dob, salary, availability } = req.body;
+        const {name, reg_no, contact, year_of_reg, speciality, qualification, education, gender, dob, salary, availability } = req.body;
 
         const userExist = await Doctor.findOne({ reg_no: reg_no });
 
@@ -35,7 +35,7 @@ const addDoctor = async(req, res) => {
             return res.status(400).json({ message: "Doctor Already Exists" })
         }
 
-        const newUser = await Doctor.create({reg_no, contact, year_of_reg, speciality, qualification, education, gender, dob, salary, availability})
+        const newUser = await Doctor.create({name, reg_no, contact, year_of_reg, speciality, qualification, education, gender, dob, salary, availability})
         res.status(201).json({ message: "Registration Successful", userId: newUser._id.toString() });
 
     } catch (error) {

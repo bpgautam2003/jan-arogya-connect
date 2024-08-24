@@ -136,12 +136,9 @@ const Signup = () => {
         password,
       });
 
-      if (response.status===200) {
-        // Handle successful registration and redirect to the admin page
-        navigate('/Users/Admin/components/Admin'); // Redirect to admin login page
-      } else {
-        setError(response.data.message || 'Registration failed');
-      }
+      alert(response.data.message);
+      navigate('/Users/Admin/components/auth/Login'); 
+      
     } catch (err) {
       setError('An error occurred. Please try again.');
     }
