@@ -8,6 +8,23 @@ const getAllDoctors = async(req, res) => {
         console.log(error)
     }
 }
+
+const getDoctor = async (req, res) => {
+    try {
+        const { reg_no } = req.params;
+        const doctor = await Doctor.findOne({ reg_no: reg_no }).lean(); // Add `await` here
+
+        if (!doctor) {
+            return res.status(400).json({ message: "Doctor does not exist" });
+        }
+
+        res.status(200).json({ doctor });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+};
+
 const addDoctor = async(req, res) => {
     try {
         const {reg_no, contact, year_of_reg, speciality, qualification, education, gender, dob, salary, availability } = req.body;
@@ -61,4 +78,4 @@ const deleteDoctor = async (req, res) => {
     }
 };
 
-module.exports = {getAllDoctors, addDoctor, editDoctorDetails, deleteDoctor}
+module.exports = {getDoctor, getAllDoctors, addDoctor, editDoctorDetails, deleteDoctor}
