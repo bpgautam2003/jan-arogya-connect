@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InventoryLogin from "./Users/Inventory/components/auth/InventoryLogin";
 import DoctorProfile from "./Users/Doctors/components/DoctorProfile.js"
 import ReceptionistDashboard from "./Users/Receptionist/components/ReceptionistDashboard";
+import ManageQueues from "./Users/Queue/ManageQueues";
+import PatientAssignment from "./Users/Queue/PatientAssignment";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <ReceptionistLogin />
         <Login />
         <Signup /> */}
+        <PatientAssignment/>
+        <ManageQueues/>
       </div>
     </Router>
   );
