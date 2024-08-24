@@ -12,6 +12,12 @@ router.post("/reception-login", authControllers.receptionLogin)
 
 router.post("/reception-register", authControllers.receptionRegister)
 
+router.post("/inventory-login", authControllers.inventoryLogin)
+
+router.post("/inventory-register", authControllers.inventoryRegister)
+
+
+
 
 
 module.exports = router;
