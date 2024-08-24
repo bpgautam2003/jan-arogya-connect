@@ -8,17 +8,24 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InventoryLogin from "./Users/Inventory/components/auth/InventoryLogin";
 import ManageQueues from "./Users/Queue/ManageQueues";
 import PatientAssignment from "./Users/Queue/PatientAssignment";
+import MainLandingPage from "./MainLandingPage";
+import InventoryRegister from "./Users/Inventory/components/auth/InventoryRegister";
+import ReceptionistRegister from "./Users/Receptionist/components/auth/ReceptionistRegister";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <HomeNavbar />
+        {/* <HomeNavbar /> */}
         <Routes >
+          <Route path="/" element={<MainLandingPage/>}/>
           <Route path="Users/Admin/components/auth/Login" element={<Login/>}/>
+          <Route path="Users/Admin/components/Admin" element={<Admin/>}/>
           <Route path="Users/Admin/components/auth/Signup" element={<Signup/>}/>
           <Route path="Users/Inventory/components/auth/InventoryLogin" element={<InventoryLogin/>}/>
           <Route path="Users/Receptionist/components/auth/ReceptionistLogin" element={<ReceptionistLogin/>}/>
+          <Route path="Users/Inventory/components/auth/InventoryRegister" element={<InventoryRegister/>}/>
+          <Route path="Users/Receptionist/components/auth/ReceptionistRegister" element={<ReceptionistRegister/>}/>
         </Routes>
         {/* <Admin />
         <ReceptionistLogin />
