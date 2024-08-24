@@ -23,6 +23,8 @@ const AdminNavbar = () => {
     };
   }, []);
 
+
+  
   const handleLogout = () => {
     // Clear user authentication data (e.g., remove JWT token)
     localStorage.removeItem('token'); // Adjust this based on where your token is stored
@@ -30,6 +32,15 @@ const AdminNavbar = () => {
     // Redirect to login page
     navigate('/Users/Admin/components/auth/Login');
   };
+
+
+  // const navigateToDoctor = () => {
+  //   // Clear user authentication data (e.g., remove JWT token)
+  //   // localStorage.removeItem('token'); // Adjust this based on where your token is stored
+
+  //   // Redirect to login page
+  //   navigate('/Users/Doctors/components/DoctorLandingPage');
+  // };
 
   return (
     <div>
@@ -62,9 +73,9 @@ const AdminNavbar = () => {
           <ul>
             <li className="mb-2">
               <Link
-                to="/Users/Doctors/components/auth/DoctorProfile"
+                to="/Users/Doctors/components/DoctorLandingPage"
                 className="text-green-600 hover:underline"
-                onClick={() => setIsOpen(false)} // Close dashboard on click
+                // onClick={navigateToDoctor} // Close dashboard on click
               >
                 Doctor
               </Link>

@@ -13,6 +13,7 @@ import PatientAssignment from "./Users/Queue/PatientAssignment";
 import MainLandingPage from "./MainLandingPage";
 import InventoryRegister from "./Users/Inventory/components/auth/InventoryRegister";
 import ReceptionistRegister from "./Users/Receptionist/components/auth/ReceptionistRegister";
+import Newdashboard from "./Users/Doctors/components/DoctorLandingPage.jsx";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="Users/Receptionist/components/auth/ReceptionistRegister" element={<ReceptionistRegister/>}/>
           <Route path="/receptionist-dashboard" element={<ReceptionistDashboard/>}/>
           <Route path="/doctor-profile/:reg_no" element={<DoctorProfile/>} />
+          <Route path="/Users/Doctors/components/DoctorLandingPage" element={<Newdashboard/>}/>
         </Routes>
         {/* <Admin />
         <ReceptionistLogin />
