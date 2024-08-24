@@ -8,5 +8,9 @@ router.post("/admin-login", authControllers.adminLogin)
 
 router.post("/admin-register", authControllers.adminRegister)
 
+router.post("/reception-login", authControllers.receptionLogin)
+
+router.post("/reception-register", authControllers.receptionRegister)
+
 
 module.exports = router;
