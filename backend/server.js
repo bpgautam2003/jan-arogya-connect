@@ -10,7 +10,8 @@ const patientrouter = require('./routes/patient-routes.js');
 const connectDb = require('./utils/db.js');
 const port = process.env.PORT;
 const cors = require('cors');
-const queue = require('./models/queue.js')
+const queue = require('./models/queue-model.js')
+const queuerouter = require('./routes/queue-routes.js')
 //middleware
 app.use(express.json());
 
@@ -28,7 +29,11 @@ app.use(errorMiddleware);
 // authrouter
 app.use('/api/auth', authrouter);
 app.use('/api/doctor', doctorrouter);
+
 app.use('/api/patient', patientrouter);
+
+app.use('/api/queue', queuerouter);
+
 
 //Connecting database
 connectDb().then(() => {
