@@ -6,6 +6,8 @@ import Signup from "./Users/Admin/components/auth/Signup";
 import HomeNavbar from "./Users/Admin/components/Navbar/HomeNavbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import InventoryLogin from "./Users/Inventory/components/auth/InventoryLogin";
+import DoctorProfile from "./Users/Doctors/components/DoctorProfile.js"
+import ReceptionistDashboard from "./Users/Receptionist/components/ReceptionistDashboard";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="Users/Admin/components/auth/Signup" element={<Signup/>}/>
           <Route path="Users/Inventory/components/auth/InventoryLogin" element={<InventoryLogin/>}/>
           <Route path="Users/Receptionist/components/auth/ReceptionistLogin" element={<ReceptionistLogin/>}/>
+          <Route path="/receptionist-dashboard" element={<ReceptionistDashboard/>}/>
+          <Route path="/doctor-profile/:reg_no" element={<DoctorProfile/>} />
         </Routes>
         {/* <Admin />
         <ReceptionistLogin />
