@@ -8,7 +8,7 @@ const authrouter = require('./routes/auth-routes.js');
 const connectDb = require('./utils/db.js');
 const port = process.env.PORT;
 const cors = require('cors');
-
+const queue = require('./models/queue.js')
 //middleware
 app.use(express.json());
 
