@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 const BillingForm = () => {
     const [category, setCategory] = useState('');
@@ -7,6 +8,7 @@ const BillingForm = () => {
     const [price, setPrice] = useState(0);
     const [phoneNumber, setPhoneNumber] = useState('');
 
+    const navigate = useNavigate()
     const fetchProduct = async () => {
         const response = await fetch(`http://localhost:5000/api/inventory/products?category=${category}&name=${inventoryName}`, {
             method: 'GET',
@@ -79,6 +81,8 @@ const BillingForm = () => {
             setQuantity(0);
             setPrice(0);
             setPhoneNumber('');
+
+            navigate('/products')
         } catch (error) {
             console.error('Error during billing process:', error.message || error);
             alert('Error generating bill. Please try again.');
@@ -126,7 +130,7 @@ const BillingForm = () => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="price" className="block text-sm font-medium text-gray-700">Price (per unit)</label>
+                    <label htmlFor="price" className="block text-sm font-medium text-gray-700">Threshold</label>
                     <input
                         type="number"
                         id="price"

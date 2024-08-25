@@ -57,7 +57,7 @@ export default function InsertProduct() {
 
     return (
         <div className='container-fluid p-5'>
-            <h1 className=''>Enter Product Information</h1>
+            <h1 className='text-3xl font-bold'>Enter Product Information</h1>
             <form onSubmit={addProduct}>
                 <div className="mt-5 col-lg-6 col-md-6 col-12">
                     <label htmlFor="category" className="form-label fs-4 fw-bold">Category</label>
