@@ -23,7 +23,7 @@ const InventoryLogin = () => {
 
       setSuccess('Login Successfull');
       //alert(success)
-      navigate('/inventory-home')
+      navigate('/products')
       setError('');
     } catch (error) {
       setError('Something went wrong');

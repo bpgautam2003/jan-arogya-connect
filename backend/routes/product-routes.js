@@ -78,18 +78,18 @@ router.get('/products/:id', async (req, res) => {
 });
 
 // Editing (Updating) Data
-// router.put('/updateproduct/:id', async (req, res) => {
-//     const { category, name, quantity, threshold, expiry, supplierName } = req.body;
+router.put('/updateproduct/:id', async (req, res) => {
+    const { category, name, quantity, threshold, expiry, supplierName } = req.body;
 
-//     try {
-//         const updateProducts = await products.findByIdAndUpdate(req.params.id, { category, name, quantity, threshold, expiry, supplierName }, { new: true });
-//         if (!updateProducts) return res.status(404).json("Product not found.");
-//         res.status(200).json(updateProducts);
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json("Internal Server Error");
-//     }
-// });
+    try {
+        const updateProducts = await products.findByIdAndUpdate(req.params.id, { category, name, quantity, threshold, expiry, supplierName }, { new: true });
+        if (!updateProducts) return res.status(404).json("Product not found.");
+        res.status(200).json(updateProducts);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json("Internal Server Error");
+    }
+});
 
 // Deleting Data
 router.delete('/deleteproduct/:id', async (req, res) => {
@@ -103,27 +103,27 @@ router.delete('/deleteproduct/:id', async (req, res) => {
     }
 });
 
-router.put('/updateproduct/:id', async (req, res) => {
-    const { id } = req.params;
-    const { quantity } = req.body;
+// router.put('/updateproduct/:id', async (req, res) => {
+//     const { id } = req.params;
+//     const { quantity } = req.body;
 
-    try {
-        const product = await Products.findByIdAndUpdate(
-            id,
-            { quantity },
-            { new: true } // Return the updated product
-        );
+//     try {
+//         const product = await Products.findByIdAndUpdate(
+//             id,
+//             { quantity },
+//             { new: true } // Return the updated product
+//         );
 
-        if (!product) {
-            return res.status(404).json({ message: 'Product not found' });
-        }
+//         if (!product) {
+//             return res.status(404).json({ message: 'Product not found' });
+//         }
 
-        return res.status(200).json({ message: 'Product quantity updated', product });
-    } catch (error) {
-        console.error('Error updating product quantity:', error);
-        return res.status(500).json({ message: 'Server error' });
-    }
-});
+//         return res.status(200).json({ message: 'Product quantity updated', product });
+//     } catch (error) {
+//         console.error('Error updating product quantity:', error);
+//         return res.status(500).json({ message: 'Server error' });
+//     }
+// });
 
 // Generate bill
 router.post('/generateBill', async (req, res) => {

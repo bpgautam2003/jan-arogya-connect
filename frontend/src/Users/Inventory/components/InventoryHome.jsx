@@ -1,11 +1,14 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const InventoryHome = () => {
   return (
-    <div className="text-red-600">
-      Inventory Home
+    <div className="inventory-home">
+     <Navbar title="IMS" ></Navbar>
+      
     </div>
   )
 }
 
 export default InventoryHome
+

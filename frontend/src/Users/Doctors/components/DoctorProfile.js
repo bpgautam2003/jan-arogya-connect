@@ -24,10 +24,10 @@ const DoctorProfile = () => {
   }
 
   return (
-    <div className="max-w-sm mx-auto rounded-lg shadow-lg overflow-hidden">
+    <div className="w-3/5 justify-center my-16 mx-auto rounded-lg shadow-lg overflow-hidden">
       <div className="flex">
         {/* Left Section: Photo */}
-        <div className="w-1/2 bg-green-200 flex items-center justify-center">
+        <div className="w-2/5 bg-green-200 flex items-center justify-center">
           <img
             className="w-24 h-24 rounded-full border-2 border-green-400"
             src="https://via.placeholder.com/100"
@@ -36,7 +36,7 @@ const DoctorProfile = () => {
         </div>
 
         {/* Right Section: Information */}
-        <div className="w-1/2 p-4">
+        <div className="w-3/5 p-4">
           <h2 className="text-xl font-bold text-green-800">{doctor.name}</h2>
           <p className="text-green-600">{doctor.speciality}</p>
           <div className="mt-4">

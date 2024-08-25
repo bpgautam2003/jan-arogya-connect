@@ -1,4 +1,4 @@
-import "./App.css";
+
 import Admin from "./Users/Admin/components/Admin";
 import ReceptionistLogin from "./Users/Receptionist/components/auth/ReceptionistLogin";
 import Login from "./Users/Admin/components/auth/Login";
@@ -20,7 +20,16 @@ import ERPatients from "./Users/Queue/ERPatients";
 import OccupiedDoctors from "./Users/Queue/OccupiedDoctors";
 import Newdashboard from "./Users/Doctors/components/DoctorLandingPage.jsx";
 import InventoryHome from "./Users/Inventory/components/InventoryHome";
+
 import HospitalDashboard from "./Users/Queue/HospitalDashboard.jsx"
+
+
+import Products from "./Users/Inventory/components/Products";
+import InsertProduct from "./Users/Inventory/components/InsertProduct";
+import UpdateProduct from "./Users/Inventory/components/UpdateProduct";
+import About from "./Users/Inventory/components/About";
+
+import "./App.css";
 
 
 
@@ -42,6 +51,10 @@ function App() {
           <Route path="/receptionist-dashboard" element={<ReceptionistDashboard/>}/>
           <Route path="/doctor-profile/:reg_no" element={<DoctorProfile/>} />
           <Route path="/Users/Doctors/components/DoctorLandingPage" element={<Newdashboard/>}/>
+          <Route path="/products" element={<Products />} />
+          <Route path="/insertproduct" element={<InsertProduct />} />
+          <Route path="/updateproduct/:id" element={<UpdateProduct />} />
+          <Route path="about-inventory" element={<About/>} />
         </Routes>
         {/* <Admin />
         <ReceptionistLogin />
