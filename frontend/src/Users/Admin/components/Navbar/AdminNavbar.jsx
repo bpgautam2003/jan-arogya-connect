@@ -82,7 +82,7 @@ const AdminNavbar = () => {
             </li>
             <li>
               <Link
-                to="#"
+                to="/products"
                 className="text-green-600 hover:underline"
                 onClick={() => setIsOpen(false)} // Close dashboard on click
               >
