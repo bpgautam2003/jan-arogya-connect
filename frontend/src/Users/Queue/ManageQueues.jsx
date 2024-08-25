@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const ManageQueues = () => {
   const [queues, setQueues] = useState([]);
+  const [doctors, setDoctors] = useState({});
   const [message, setMessage] = useState('');
 
   useEffect(() => {
@@ -16,7 +17,22 @@ const ManageQueues = () => {
       }
     };
 
+    const fetchDoctors = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/doctor/');
+        const doctorList = response.data.reduce((acc, doctor) => {
+          acc[doctor._id] = doctor.name; // Assuming reg_no is the doctorId
+          return acc;
+        }, {});
+        setDoctors(doctorList);
+      } catch (error) {
+        console.error('Error fetching doctors:', error);
+        setMessage('Error fetching doctors.');
+      }
+    };
+
     fetchQueues();
+    fetchDoctors();
   }, []);
 
   const handleRemovePatient = async (doctorId) => {
@@ -38,28 +54,38 @@ const ManageQueues = () => {
   };
 
   return (
-    <div>
-      <h1>Manage Doctor Queues</h1>
+    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
       {queues.length > 0 ? (
-        <ul>
+        <ul className="space-y-4">
           {queues.map(queue => (
-            <li key={queue.doctorId}>
-              <h2>Doctor {queue.doctorId}</h2>
-              <ul>
-                {queue.patientQueue.map((patientId, index) => (
-                  <li key={index}>{patientId}</li>
-                ))}
+            <li key={queue.doctorId} className="border rounded-lg p-4 shadow">
+              <h2 className="text-xl font-semibold text-green-600">
+                Doctor: {doctors[queue.doctorId] || 'Unknown'}
+              </h2>
+              <ul className="mb-2 space-y-1">
+                {queue.patientQueue.length > 0 ? (
+                  queue.patientQueue.map((patientId, index) => (
+                    <li key={index} className="text-md text-gray-700">
+                      {patientId}
+                    </li>
+                  ))
+                ) : (
+                  <li className="text-md text-gray-700">No patients in queue</li>
+                )}
               </ul>
-              <button onClick={() => handleRemovePatient(queue.doctorId)}>
+              <button
+                onClick={() => handleRemovePatient(queue.doctorId)}
+                className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
+              >
                 Remove Patient from Front
               </button>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No queues available.</p>
+        <p className="text-lg text-gray-700 text-center">No queues available.</p>
       )}
-      {message && <p>{message}</p>}
+      {message && <p className="mt-4 text-red-500 text-center">{message}</p>}
     </div>
   );
 };
