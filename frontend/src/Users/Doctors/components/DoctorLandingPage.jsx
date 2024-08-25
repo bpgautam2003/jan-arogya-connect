@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import SearchField from './SearchField'; // Import your SearchField component
 import './DoctorList.css'; // Import your CSS file
 import { useNavigate } from 'react-router-dom';
+import DoctorNavbar from './DoctorNavbar';
 
 // Function to fetch doctors from the API
 const fetchDoctors = async () => {
@@ -46,12 +47,14 @@ const getMatchedDoctors = (searchText, doctorList) => {
 //     </div>
 //   </div>
 // );
-const DoctorList = ({ list, navigateToDoctorDetails }) => (
+
+// latest commited
+const DoctorList = ({ list, navigateToDoctorDetails }) =>(
   <div className="doctor-carousel">
     <div className="carousel-header">
       <h2>Our Doctors</h2>
     </div>
-    <div className="carousel-body">
+    <div className="carousel-body ml-5">
       {list.map((doctor) => (
         <div key={doctor.reg_no} className="doctor-card">
           <div className="doctor-card-content">
@@ -60,6 +63,7 @@ const DoctorList = ({ list, navigateToDoctorDetails }) => (
           </div>
           <div className="doctor-card-footer">
             <button 
+             
               onClick={() => navigateToDoctorDetails(doctor.reg_no)} // Pass the doctor ID
               className="details-button"
             >
@@ -73,12 +77,46 @@ const DoctorList = ({ list, navigateToDoctorDetails }) => (
   </div>
 );
 
+// const DoctorList = ({ list, navigateToDoctorDetails }) => (
+//   <div className="doctor-carousel">
+//     <div className="carousel-header">
+//       <h2>Our Doctors</h2>
+//     </div>
+//     <div className="carousel-body ml-5">
+//       {list.map((doctor) => (
+//         <div key={doctor.reg_no} className="doctor-card">
+//           <div className="doctor-card-content">
+//             <h3 className="doctor-name">{doctor.name}</h3>
+//             <p className="doctor-specialization">{doctor.speciality}</p>
+//           </div>
+//           <div className="doctor-card-footer">
+//             {/* Use the navigateToDoctorDetails prop to handle navigation */}
+//             <button 
+//               onClick={() => navigateToDoctorDetails(doctor._id)}
+//               className="details-button"
+//             >
+//               Details
+//             </button>
+//             <button className="contact-button">Contact</button>
+//           </div>
+//         </div>
+//       ))}
+//     </div>
+//   </div>
+// );
+
+// export default DoctorList;
+
+
 const Newdashboard = () => {
   const [doctorList, setDoctorList] = useState([]);
   const [filteredDoctorList, setFilteredDoctorList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const handleClick = async(id) => {    
+    navigate(`/doctor-profile/${id}`)
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -109,12 +147,13 @@ const Newdashboard = () => {
 
   return (
     <div className="react-search-field-demo container">
+      <DoctorNavbar/>
       <div>
-        <h3>Doctor Availability</h3>
+        {/* <h3>Doctor Availability</h3>
         <SearchField
           placeholder="Search doctor"
           onChange={onDoctorSearch}
-        />
+        /> */}
         <DoctorList 
           list={filteredDoctorList} 
           navigateToDoctorDetails={navigateToDoctorDetails} // Pass the function as a prop
