@@ -41,10 +41,10 @@ function App() {
         <ReceptionistLogin />
         <Login />
         <Signup /> */}
-        <PatientAssignment/>
+        {/* <PatientAssignment/>
         <ManageQueues/>
         <ERPatients/>
-        <OccupiedDoctors/>
+        <OccupiedDoctors/> */}
       </div>
     </Router>
   );

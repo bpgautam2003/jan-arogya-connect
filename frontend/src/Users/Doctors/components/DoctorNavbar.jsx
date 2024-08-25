@@ -52,10 +52,10 @@ const DoctorNavbar = ({ onSearch, onAddDoctor }) => {
       
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-blue-800 text-white">
+    <nav className="flex justify-between items-center p-4 bg-green-800 text-white w-full overflow-hidden">
       {/* Website Name */}
       <div className="text-lg font-bold">
-        MyHealthSite
+        Jan Arogya Connect
       </div>
 
       {/* Search Bar and Add Doctor Button */}
@@ -63,7 +63,7 @@ const DoctorNavbar = ({ onSearch, onAddDoctor }) => {
         {/* Search Bar */}
         <SearchField
           placeholder="Search doctor"
-          onChange={onDoctorSearch}
+          onChange={onSearch}
         />
 
         {/* Add Doctor Button */}

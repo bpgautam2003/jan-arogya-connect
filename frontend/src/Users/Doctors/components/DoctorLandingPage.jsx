@@ -50,7 +50,7 @@ const getMatchedDoctors = (searchText, doctorList) => {
 
 // latest commited
 const DoctorList = ({ list, navigateToDoctorDetails }) =>(
-  <div className="doctor-carousel">
+  <div className="doctor-carousel overflow-hidden">
     <div className="carousel-header">
       <h2>Our Doctors</h2>
     </div>
@@ -146,9 +146,32 @@ const Newdashboard = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="react-search-field-demo container">
-      <DoctorNavbar/>
-      <div>
+    <div>
+      {/* <DoctorNavbar onDoctorSearch={onDoctorSearch}/> */}
+      <nav className="flex justify-between items-center p-4 bg-green-800 text-white w-full overflow-hidden">
+      {/* Website Name */}
+      <div className="text-lg font-bold">
+        Jan Arogya Connect
+      </div>
+
+      {/* Search Bar and Add Doctor Button */}
+      <div className="flex items-center space-x-4">
+        {/* Search Bar */}
+        <SearchField
+          placeholder="Search doctor"
+          onChange={onDoctorSearch}
+        />
+
+        {/* Add Doctor Button */}
+        {/* <button
+          onClick={onAddDoctor}
+          className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
+        >
+          Add Doctor
+        </button> */}
+      </div>
+    </nav>
+      <div className="flex w-full justify-center">
         {/* <h3>Doctor Availability</h3>
         <SearchField
           placeholder="Search doctor"
