@@ -1,5 +1,6 @@
 const Doctor = require('../models/doctor-model');
 const DoctorQueue = require('../models/queue-model');
+const Patient = require('../models/patient-model');
 
 function isDoctorAvailable(doctor, currentTime) {
   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -73,6 +74,12 @@ async function handlePatientAssignment(req, res) {
     const doctor = doctors.find(doc => doc.name === doctorName);
     if (doctor && isDoctorAvailable(doctor, currentTime)) {
       await addPatientToDoctorQueue(patientId, doctor._id);
+      const response = await Patient.findOneAndUpdate(
+        { patient_id: patientId },  // Query by patient_id
+        { doc_assigned: doctorName }, // Update the doc_assigned field
+        { new: true } // Return the updated document
+    );
+      console.log(response);
       res.status(200).json({ message: `Patient ${patientId} added to doctor ${doctorName}s queue.` });
     } else {
       res.status(400).json({ message: `Doctor ${doctorName} is not available or not found.` });

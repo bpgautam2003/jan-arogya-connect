@@ -10,13 +10,19 @@ import DoctorProfile from "./Users/Doctors/components/DoctorProfile.js"
 import ReceptionistDashboard from "./Users/Receptionist/components/ReceptionistDashboard";
 import ManageQueues from "./Users/Queue/ManageQueues";
 import PatientAssignment from "./Users/Queue/PatientAssignment";
+
+
 import MainLandingPage from "./MainLandingPage";
 import InventoryRegister from "./Users/Inventory/components/auth/InventoryRegister";
 import ReceptionistRegister from "./Users/Receptionist/components/auth/ReceptionistRegister";
+
 import ERPatients from "./Users/Queue/ERPatients";
 import OccupiedDoctors from "./Users/Queue/OccupiedDoctors";
 import Newdashboard from "./Users/Doctors/components/DoctorLandingPage.jsx";
 import InventoryHome from "./Users/Inventory/components/InventoryHome";
+import HospitalDashboard from "./Users/Queue/HospitalDashboard.jsx"
+
+
 
 function App() {
   return (
@@ -41,10 +47,10 @@ function App() {
         <ReceptionistLogin />
         <Login />
         <Signup /> */}
-        {/* <PatientAssignment/>
-        <ManageQueues/>
-        <ERPatients/>
-        <OccupiedDoctors/> */}
+
+
+        <HospitalDashboard/>
+
       </div>
     </Router>
   );

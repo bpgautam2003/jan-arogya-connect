@@ -27,7 +27,7 @@ const patientSchema = new mongoose.Schema({
     },
     doc_assigned : {
         type : String,
-        require: false
+        default : null
     },
     speciality : {
         type : String,

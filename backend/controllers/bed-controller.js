@@ -33,11 +33,12 @@ const isDoctorAvailable = (doctor, currentTime) => {
 // Function to handle emergency patient arrival
 const handleEmergencyPatient = async (req, res) => {
     try {
-        const { patientID } = req.body;
+        console.log(req.body.patientId);
+        var pid=req.body.patientId;
         const currentTime = new Date(); // Get the current time
 
         // Step 1: Check for available ER beds
-        const availableBed = await Bed.findOne({ type: 'ER', patientID: null });
+        const availableBed = await Bed.findOne({  patientID: null || "null" });
 
         if (!availableBed) {
             return res.status(404).json({ message: "No ER bed available. Please refer the patient to another hospital." });
@@ -56,7 +57,9 @@ const handleEmergencyPatient = async (req, res) => {
         }
 
         // Step 3: Assign the patient to the bed and mark the doctor as busy
-        availableBed.patientID = patientID;
+        console.log(pid);
+        console.log("hehe");
+        availableBed.patientID = pid;
         await availableBed.save();
 
         availableDoctor.isFree = false;

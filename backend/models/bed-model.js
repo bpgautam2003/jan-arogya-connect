@@ -5,12 +5,11 @@ const bedSchema = new mongoose.Schema({
     bedID: {
         type: String,
         required: true,
-        unique: true,
-        match: /^[0-9]+_[0-9]+$/ // Matches 'floor number_bed number' format
+        unique: true// Matches 'floor number_bed number' format
     },
     patientID: {
         type: String,
-        default: null // Can be null when bed is free
+        default: "null" // Can be null when bed is free
     },
     type: {
         type: String,
