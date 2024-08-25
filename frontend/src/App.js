@@ -62,7 +62,7 @@ function App() {
         <Signup /> */}
 
 
-        <HospitalDashboard/>
+        {/* <HospitalDashboard/> */}
 
       </div>
     </Router>

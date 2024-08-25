@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { useTable, usePagination, useGlobalFilter, useFilters } from "react-table";
 import axios from "axios";
 import ManageQueues from "../../Queue/ManageQueues";
+import HospitalDashboard from "../../Queue/HospitalDashboard";
 
 // Custom filter UI component
 const GlobalFilter = ({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) => {
@@ -426,6 +427,7 @@ function ReceptionistDashboard() {
       {/* <div className="OtherHospitals border border-[#115e59] rounded-md">
         <h3>This shows the Real-Time Update of Other Hospitals</h3>
       </div> */}
+      <HospitalDashboard/>
     </div>
   );
 }
