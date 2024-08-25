@@ -13,6 +13,7 @@ const cors = require('cors');
 const queue = require('./models/queue-model.js')
 const queuerouter = require('./routes/queue-routes.js')
 const bedrouter = require('./routes/bed-routes.js');
+const productrouter = require('./routes/product-routes.js')
 
 //middleware
 app.use(express.json());
@@ -34,6 +35,7 @@ app.use('/api/doctor', doctorrouter);
 app.use('/api/patient', patientrouter);
 app.use('/api/queue', queuerouter);
 app.use('/api/bed', bedrouter);
+app.use('/api/inventory', productrouter)
 
 //Connecting database
 connectDb().then(() => {
