@@ -34,11 +34,11 @@ const InventoryLogin = () => {
   return (
     <>
     <HomeNavbar/>
-    <div className="min-h-screen flex items-center justify-center bg-green-100">
+    {/* <div className="min-h-screen flex items-center justify-center bg-green-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-2xl font-bold text-green-800 mb-6 text-center">Inventory Login</h2>
         <form onSubmit={handleSubmit}>
-          {/* Employee ID Field */}
+         
           <div className="mb-4">
             <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="employeeId">
               Employee ID
@@ -54,7 +54,7 @@ const InventoryLogin = () => {
             />
           </div>
 
-          {/* Password Field */}
+         
           <div className="mb-6">
             <label className="block text-green-700 font-semibold mb-2 text-left" htmlFor="password">
               Password
@@ -70,11 +70,11 @@ const InventoryLogin = () => {
             />
           </div>
 
-           {/* Error and Success Messages */}
+         
            {error && <p className="text-red-500 text-center mb-4">{error}</p>}
           {success && <p className="text-green-500 text-center mb-4">{success}</p>}
 
-          {/* Login Button */}
+         
           <div className="flex items-center justify-between">
             <button
               type="submit"
@@ -85,7 +85,60 @@ const InventoryLogin = () => {
           </div>
         </form>
       </div>
-    </div>
+    </div> */}
+    <div className="min-h-screen flex items-center justify-center bg-[#E8EAF5]">
+  <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+    <h2 className="text-2xl font-bold text-[#0F22A2] mb-6 text-center">Inventory Login</h2>
+    <form onSubmit={handleSubmit}>
+      {/* Employee ID Field */}
+      <div className="mb-4">
+        <label className="block text-[#0F22A2] font-semibold mb-2 text-left" htmlFor="employeeId">
+          Employee ID
+        </label>
+        <input
+          type="text"
+          id="employee_id"
+          name="employee_id"
+          value={employeeId}
+          onChange={(e) => setEmployeeId(e.target.value)}
+          className="w-full px-3 py-2 border border-[#BBC4E8] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4256B9]"
+          placeholder="Enter your Employee ID"
+        />
+      </div>
+
+      {/* Password Field */}
+      <div className="mb-6">
+        <label className="block text-[#0F22A2] font-semibold mb-2 text-left" htmlFor="password">
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full px-3 py-2 border border-[#BBC4E8] rounded-md focus:outline-none focus:ring-2 focus:ring-[#4256B9]"
+          placeholder="Enter your Password"
+        />
+      </div>
+
+      {/* Error and Success Messages */}
+      {error && <p className="text-[#854C5D] text-center mb-4">{error}</p>}
+      {success && <p className="text-[#659AC6] text-center mb-4">{success}</p>}
+
+      {/* Login Button */}
+      <div className="flex items-center justify-between">
+        <button
+          type="submit"
+          className="bg-[#4256B9] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#0F22A2] focus:outline-none focus:ring-2 focus:ring-[#4256B9] focus:ring-opacity-50 w-full"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
     </>
   )
 }
