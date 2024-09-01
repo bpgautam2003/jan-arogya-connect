@@ -21,7 +21,7 @@ app.use(express.json());
 //cors middleware
 
 const corsOption = {
-    origin : "https://jan-arogya-connect.vercel.app/",
+    origin : "https://jan-arogya-connect.vercel.app",
     methods : "GET, POST, PUT, DELETE, PATCH",
     credentials : true
 }
