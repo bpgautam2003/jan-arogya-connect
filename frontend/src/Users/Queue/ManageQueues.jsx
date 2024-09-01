@@ -9,7 +9,7 @@ const ManageQueues = () => {
   useEffect(() => {
     const fetchQueues = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/queue/doctor-queues');
+        const response = await axios.get('https://jan-arogya-connect-backend-1.onrender.com/api/queue/doctor-queues');
         setQueues(response.data);
       } catch (error) {
         console.error('Error fetching queues:', error);
@@ -19,7 +19,7 @@ const ManageQueues = () => {
 
     const fetchDoctors = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/doctor/');
+        const response = await axios.get('https://jan-arogya-connect-backend-1.onrender.com/api/doctor/');
         const doctorList = response.data.reduce((acc, doctor) => {
           acc[doctor._id] = doctor.name; // Assuming reg_no is the doctorId
           return acc;
@@ -37,7 +37,7 @@ const ManageQueues = () => {
 
   const handleRemovePatient = async (doctorId) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/queue/remove-patient-from-front', { doctorId });
+      const response = await axios.post('https://jan-arogya-connect-backend-1.onrender.com/api/queue/remove-patient-from-front', { doctorId });
       setMessage(response.data.message);
       // Update the queue list after removal
       const updatedQueues = queues.map(queue => {

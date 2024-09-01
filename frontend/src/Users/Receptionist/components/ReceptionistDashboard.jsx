@@ -140,7 +140,7 @@ const Modal = ({ isOpen, onClose }) => {
   const handleSave = async (req,res) => {
     try {
       
-      await axios.post("http://localhost:5000/api/patient/add-patient", formData);
+      await axios.post("https://jan-arogya-connect-backend-1.onrender.com/api/patient/add-patient", formData);
       if(formData.specialization!='Emergency Medicine'){
         try {
           const payload = {
@@ -148,7 +148,7 @@ const Modal = ({ isOpen, onClose }) => {
             doctorName: formData.preferred_doctor,  // correct to match backend
             speciality: formData.specialization,  // correct to match backend
         };
-          const response = await axios.post('http://localhost:5000/api/queue/assign-patient', payload);
+          const response = await axios.post('https://jan-arogya-connect-backend-1.onrender.com/api/queue/assign-patient', payload);
           //console.log(response.data.message);
           console.log('success');
         } catch (error) {
@@ -342,7 +342,7 @@ function ReceptionistDashboard() {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await axios.get("http://localhost:5000/api/patient");
+        const response = await axios.get("https://jan-arogya-connect-backend-1.onrender.com/api/patient");
         setData(response.data);
         setLoadingData(false);
       } catch (error) {

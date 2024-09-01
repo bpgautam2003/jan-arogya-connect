@@ -17,7 +17,7 @@ export default function UpdateProduct() {
         // Fetch product details when the component mounts
         const fetchProduct = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/inventory/products/${id}`);
+                const response = await fetch(`https://jan-arogya-connect-backend-1.onrender.com/api/inventory/products/${id}`);
                 const product = await response.json();
                 setCategory(product.category);
                 setName(product.name);
@@ -46,7 +46,7 @@ export default function UpdateProduct() {
         setError("");
 
         try {
-            const response = await fetch(`http://localhost:5000/api/inventory/updateproduct/${id}`, {
+            const response = await fetch(`https://jan-arogya-connect-backend-1.onrender.com/api/inventory/updateproduct/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"

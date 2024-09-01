@@ -1,1 +1,1 @@
-export const ADMIN_LOGIN_API_END_POINT= "http://localhost:5000/api/auth/admin-register"
+export const ADMIN_LOGIN_API_END_POINT= "https://jan-arogya-connect-backend-1.onrender.com/api/auth/admin-register"

@@ -32,7 +32,7 @@ export default function InsertProduct() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/inventory/insertproduct",
+        "https://jan-arogya-connect-backend-1.onrender.com/api/inventory/insertproduct",
         {
           method: "POST",
           headers: {

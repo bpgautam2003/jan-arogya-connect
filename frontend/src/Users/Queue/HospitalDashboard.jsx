@@ -12,7 +12,7 @@ const HospitalDashboard = () => {
 
     const fetchERPatients = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/bed/er/occupied');
+            const response = await axios.get('https://jan-arogya-connect-backend-1.onrender.com/api/bed/er/occupied');
             setERPatients(response.data);
         } catch (error) {
             console.error("Error fetching ER patients", error);
@@ -21,7 +21,7 @@ const HospitalDashboard = () => {
 
     const dischargePatient = async (bedID) => {
         try {
-            await axios.put(`http://localhost:5000/api/bed/free/${bedID}`);
+            await axios.put(`https://jan-arogya-connect-backend-1.onrender.com/api/bed/free/${bedID}`);
             fetchERPatients(); // Refresh the list after discharging a patient
         } catch (error) {
             console.error("Error discharging patient", error);
@@ -30,7 +30,7 @@ const HospitalDashboard = () => {
 
     const fetchOccupiedDoctors = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/doctor/occupied');
+            const response = await axios.get('https://jan-arogya-connect-backend-1.onrender.com/api/doctor/occupied');
             setOccupiedDoctors(response.data);
         } catch (error) {
             console.error("Error fetching occupied doctors", error);
@@ -39,7 +39,7 @@ const HospitalDashboard = () => {
 
     const freeDoctor = async (doctorId) => {
         try {
-            await axios.put(`http://localhost:5000/api/doctor/free/${doctorId}`);
+            await axios.put(`https://jan-arogya-connect-backend-1.onrender.com/api/doctor/free/${doctorId}`);
             fetchOccupiedDoctors(); // Refresh the list after freeing the doctor
         } catch (error) {
             console.error("Error freeing doctor", error);

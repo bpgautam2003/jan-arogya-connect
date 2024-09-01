@@ -18,7 +18,7 @@ const ReceptionistLogin = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/reception-login', {
+      const response = await axios.post('https://jan-arogya-connect-backend-1.onrender.com/api/auth/reception-login', {
         employee_id,
         password
       });     

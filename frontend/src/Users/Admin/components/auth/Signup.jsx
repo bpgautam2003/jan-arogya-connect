@@ -127,7 +127,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/admin-register', {
+      const response = await axios.post('https://jan-arogya-connect-backend-1.onrender.com/api/auth/admin-register', {
         name,
         hrn,
         address,

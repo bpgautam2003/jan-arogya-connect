@@ -10,7 +10,7 @@ const BillingForm = () => {
 
     const navigate = useNavigate()
     const fetchProduct = async () => {
-        const response = await fetch(`http://localhost:5000/api/inventory/products?category=${category}&name=${inventoryName}`, {
+        const response = await fetch(`https://jan-arogya-connect-backend-1.onrender.com/api/inventory/products?category=${category}&name=${inventoryName}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ const BillingForm = () => {
     };
 
     const updateProductQuantity = async (productId, updatedQuantity) => {
-        const updateResponse = await fetch(`http://localhost:5000/api/inventory/updateproduct/${productId}`, {
+        const updateResponse = await fetch(`https://jan-arogya-connect-backend-1.onrender.com/api/inventory/updateproduct/${productId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ quantity: updatedQuantity }),

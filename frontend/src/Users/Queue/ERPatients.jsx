@@ -10,7 +10,7 @@ const ERPatients = () => {
 
     const fetchERPatients = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/bed/er/occupied');
+            const response = await axios.get('https://jan-arogya-connect-backend-1.onrender.com/api/bed/er/occupied');
             setERPatients(response.data);
         } catch (error) {
             console.error("Error fetching ER patients", error);
@@ -19,7 +19,7 @@ const ERPatients = () => {
 
     const dischargePatient = async (bedID) => {
         try {
-            await axios.put(`http://localhost:5000/api/bed/free/${bedID}`);
+            await axios.put(`https://jan-arogya-connect-backend-1.onrender.com/api/bed/free/${bedID}`);
             fetchERPatients(); // Refresh the list after discharging a patient
         } catch (error) {
             console.error("Error discharging patient", error);

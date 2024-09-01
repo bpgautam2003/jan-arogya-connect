@@ -3,7 +3,7 @@ import axios from 'axios';
 import HomeNavbar from '../../../Admin/components/Navbar/HomeNavbar';
 import { useNavigate } from 'react-router';
 
-const RECEPTIONIST_REGISTER_API_END_POINT = "http://localhost:5000/api/auth/reception-register";
+const RECEPTIONIST_REGISTER_API_END_POINT = "https://jan-arogya-connect-backend-1.onrender.com/api/auth/reception-register";
 
 const ReceptionistRegister = () => {
   const [employee_id, setEmployeeId] = useState('');

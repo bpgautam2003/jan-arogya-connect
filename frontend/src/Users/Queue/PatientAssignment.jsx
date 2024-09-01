@@ -10,7 +10,7 @@ const PatientAssignment = ({ patientId, doctorName, speciality }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('/api/queue/assign-patient', { patientId, doctorName, speciality });
+      const response = await axios.post('https://jan-arogya-connect-backend-1.onrender.com/api/queue/assign-patient', { patientId, doctorName, speciality });
       setMessage(response.data.message);
     } catch (error) {
       setMessage(error.response.data.message || 'An error occurred');

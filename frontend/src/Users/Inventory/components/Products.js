@@ -16,7 +16,7 @@ export default function Products() {
         setError("");
 
         try {
-            const res = await fetch("http://localhost:5000/api/inventory/products", {
+            const res = await fetch("https://jan-arogya-connect-backend-1.onrender.com/api/inventory/products", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -41,7 +41,7 @@ export default function Products() {
     const deleteProduct = async (id) => {
         if (window.confirm("Are you sure you want to delete this product?")) {
             try {
-                const response = await fetch(`http://localhost:5000/api/inventory/deleteproduct/${id}`, {
+                const response = await fetch(`https://jan-arogya-connect-backend-1.onrender.com/api/inventory/deleteproduct/${id}`, {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json"

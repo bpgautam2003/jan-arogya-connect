@@ -68,7 +68,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/admin-login",
+        "https://jan-arogya-connect-backend-1.onrender.com/api/auth/admin-login",
         { email, password }
       );
 

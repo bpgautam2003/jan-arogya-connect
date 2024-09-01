@@ -8,7 +8,7 @@ import axios from 'axios';
 // Function to fetch doctors from the API
 const fetchDoctors = async () => {
   try {
-    const response = await fetch('http://localhost:5000/api/doctor'); // Replace with your API URL
+    const response = await fetch('https://jan-arogya-connect-backend-1.onrender.com/api/doctor'); // Replace with your API URL
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -164,7 +164,7 @@ const Modal = ({ isOpen, onClose }) => {
 
   const handleSave = async () => {
     try {
-      await axios.post("http://localhost:5000/api/doctor/add-doctor", formData);
+      await axios.post("https://jan-arogya-connect-backend-1.onrender.com/api/doctor/add-doctor", formData);
       alert("Doctor added successfully!");
       onClose();
     } catch (error) {

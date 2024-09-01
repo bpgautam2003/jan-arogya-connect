@@ -15,7 +15,7 @@ const InventoryLogin = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/inventory-login', {
+      const response = await axios.post('https://jan-arogya-connect-backend-1.onrender.com/api/auth/inventory-login', {
         employee_id: employeeId,
         password: password,
       });
