@@ -325,13 +325,13 @@ const Modal = ({ isOpen, onClose }) => {
             <button
               type="button"
               onClick={onClose}
-              className="bg-[#115e59] text-white px-4 py-2 rounded-md"
+              className="bg-[#659AC6] text-white px-4 py-2 rounded-md"
             >
               Close
             </button>
             <button
               type="submit"
-              className="bg-green-600 text-white px-4 py-2 rounded-md ml-2"
+              className="bg-[#4256B9] text-white px-4 py-2 rounded-md ml-2"
             >
               Save
             </button>

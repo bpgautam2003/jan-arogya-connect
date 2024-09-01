@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import dashboard from '../img/dashboard.png'
+import doctor from '../img/doctor.png'
+import inventory from '../img/inventory.png'
 
 const AdminNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,56 +46,79 @@ const AdminNavbar = () => {
   // };
 
   return (
+ 
     <div>
-      <nav className="bg-green-600 p-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-white text-2xl font-bold">My App</h1>
-          <button
+    <nav className="bg-[#4256B9] p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <h1 className="text-white text-2xl font-bold">Jan Arogya Connect</h1>
+        <button
             onClick={toggleDashboard}
             className="bg-white text-green-600 px-4 py-2 rounded hover:bg-gray-200"
           >
-            Open Dashboard
+            <img 
+              src={dashboard}  // Replace with your image path
+              alt="Open Dashboard"
+              className="w-6 h-6" // Adjust the size of the image
+            />
           </button>
-          <button
-            onClick={handleLogout}
-            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-          >
-            Logout
-          </button>
-        </div>
-      </nav>
+        {/* <button
+          onClick={toggleDashboard}
+          className="bg-white text-green-600 px-4 py-2 rounded hover:bg-gray-200"
+        >
+          Open Dashboard
+        </button> */}
+      </div>
+    </nav>
 
-      <div
-        ref={dashboardRef}
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        <div className="p-4">
-          <h2 className="text-xl font-bold mb-4">Dashboard</h2>
-          <ul>
-            <li className="mb-2">
-              <Link
-                to="/Users/Doctors/components/DoctorLandingPage"
-                className="text-green-600 hover:underline"
-                // onClick={navigateToDoctor} // Close dashboard on click
+    <div
+      ref={dashboardRef}
+      className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
+      }`}
+    >
+      <div className="p-4">
+        <h2 className="text-xl font-bold mb-4 text-[#0F22A2]">Visit...</h2>
+        <ul>
+          <li className="mb-2  flex items-center">
+          <img 
+                src={doctor} // Replace with your image path
+                alt="Doctor"
+                className="w-4 h-4 mr-2" // Adjust the size of the icon
+              />
+            <Link
+              to="/Users/Doctors/components/DoctorLandingPage"
+              className="text-[#0F22A2] hover:underline"
+              onClick={() => setIsOpen(false)} // Close dashboard on click
+            >
+              Doctor
+            </Link>
+          </li>
+          <li className="mb-2 flex items-center">
+          <img 
+                src={inventory} // Replace with your image path
+                alt="Doctor"
+                className="w-4 h-4 mr-2" // Adjust the size of the icon
+              />
+            <Link
+              to="/products"
+              className="text-[#0F22A2] hover:underline"
+              onClick={() => setIsOpen(false)} // Close dashboard on click
+            >
+              Inventory
+            </Link>
+          </li>
+          <li className="flex items-center">
+              <button
+                onClick={handleLogout}
+                className="bg-red-600 text-white px-16 py-2 rounded hover:bg-red-700 w-full text-left"
               >
-                Doctor
-              </Link>
+                Logout
+              </button>
             </li>
-            <li>
-              <Link
-                to="/products"
-                className="text-green-600 hover:underline"
-                onClick={() => setIsOpen(false)} // Close dashboard on click
-              >
-                Inventory
-              </Link>
-            </li>
-          </ul>
-        </div>
+        </ul>
       </div>
     </div>
+  </div>
   );
 };
 

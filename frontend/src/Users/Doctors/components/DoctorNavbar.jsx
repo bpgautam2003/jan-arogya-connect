@@ -52,7 +52,7 @@ const DoctorNavbar = ({ onSearch, onAddDoctor }) => {
       
 
   return (
-    <nav className="flex justify-between items-center p-4 bg-green-800 text-white w-full overflow-hidden">
+    <nav className="flex justify-between items-center p-4 bg-[#4256B9] text-white w-full overflow-hidden">
       {/* Website Name */}
       <div className="text-lg font-bold">
         Jan Arogya Connect
