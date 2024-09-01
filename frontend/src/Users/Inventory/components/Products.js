@@ -65,10 +65,14 @@ export default function Products() {
         <div className='container-fluid p-5'>
             {/* <Navbar title="IMS" ></Navbar> */}
             {/* <h1>Products Inventory</h1> */}
+            
             <div className="flex gap-4">
-            <div className='add_button'>
-                <NavLink to="/about-inventory" className='btn btn-primary fs-5'> + Update Quantity</NavLink>
+            <div className='add_button border'>
+                <NavLink to="/InvoiceForm" className='btn btn-primary fs-5'>Go to Invoice Page</NavLink>
             </div>
+            {/* <div className='add_button'>
+                <NavLink to="/about-inventory" className='btn btn-primary fs-5'> + Update Quantity</NavLink>
+            </div> */}
             <div className='add_button'>
                 <NavLink to="/insertproduct" className='btn btn-primary fs-5'> + Add New Product</NavLink>
             </div>

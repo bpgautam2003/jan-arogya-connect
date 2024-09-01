@@ -30,6 +30,7 @@ import UpdateProduct from "./Users/Inventory/components/UpdateProduct";
 import About from "./Users/Inventory/components/About";
 
 import "./App.css";
+import InvoiceForm from "./Users/Inventory/components/Invoiceform.js";
 
 
 
@@ -55,6 +56,7 @@ function App() {
           <Route path="/insertproduct" element={<InsertProduct />} />
           <Route path="/updateproduct/:id" element={<UpdateProduct />} />
           <Route path="about-inventory" element={<About/>} />
+          <Route path="InvoiceForm" element={<InvoiceForm/>}/>
         </Routes>
         {/* <Admin />
         <ReceptionistLogin />
